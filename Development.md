@@ -11,9 +11,9 @@ Template
 A template has several variables:
  * title - that appears on several places
  * properties - right hand bar, see below
- * bread - breadcumb hierarchy, i.e. [ ('name', 'url'), ... ]
+ * bread - breadcumb hierarchy, i.e. `[ ('name', 'url'), ... ]`
  * sidebar - additional sidebar entries, datastructure is
-   [ ('topic', [ ('text', 'url'), ...]), ... ]
+   `[ ('topic', [ ('text', 'url'), ...]), ... ]`
    ** info.downloads, info.friends, info.learnmore have the same strucutre,
       names might change sometimes.
  * credit - small credits note at the bottom
@@ -23,10 +23,11 @@ For more details read templates/homepage.html
 
 
 The idea is to extend "homepage.html" and replace the content block:
+```angular2html
 {% block content %}
    ... your stuff ...
 {% endblock %}
-
+```
 CSS
 ---
 The css should be kept in the .css files in lmfdb/templates/ and loaded into
@@ -93,7 +94,7 @@ Testing
   which runs tests on all functions.
 
 - A code coverage diagnostic can be obtained via
-  ```
+  ```bash
   ./test.sh html
   ```
   it produces beautiful coverage scores in `lmfdb/cover/index.html`
@@ -101,7 +102,7 @@ Testing
 Pro Tip: Debugging
 -------------------
 Just add
-```
+```python
   import pdb; pdb.set_trace()
 ```
 somewhere (e.g. protected inside a sensible if) this magic
@@ -153,7 +154,7 @@ In your home directory, in the file ~/.gitconfig
 
 List-table should always be like
 --------------------------------
-
+```html
 <table class="ntdata">
   <thead><tr><td>...</td></tr></thead>
 
@@ -164,15 +165,19 @@ List-table should always be like
    ...
   </tbody>
 </table>
-
+```
 ... we might also switch to CSS3's nth-element selector and forget about this.
 
 Properties
 ----------
 the table on the right renders Strings formatted in the following datastructure:
+```
 prop = [ ( '<description>', [ '<value 1>', '<value 2>', ...] ), ... ]
+```
 or
+```
 prop = [ ( '<description>', '<value>'), ('<description>', '<value>'), ... ]
+```
 you can mix list or non-list.
 
 LaTeX Macros

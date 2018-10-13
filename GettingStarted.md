@@ -204,12 +204,12 @@ Code development and sharing your work
 
    * To pull in the most recent changes there to your own master
      branch locally and update your github repository too:
-
-    ```
+    
+```bash
     git checkout master
     git pull upstream master
     git push origin master
-    ```
+```
 
    * To rebase your current working branch on the latest master:
 
